@@ -89,9 +89,6 @@ export default function Home() {
             <a href="https://calendly.com/balasenjuti22/30min" target="_blank" rel="noopener noreferrer" className="border-b border-[var(--border)] hover:text-[var(--ink)] hover:border-[var(--ink)] transition-colors">
               Book a chat
             </a>
-            <a href="https://www.instagram.com/tijushe/" target="_blank" rel="noopener noreferrer" className="border-b border-[var(--border)] hover:text-[var(--ink)] hover:border-[var(--ink)] transition-colors">
-              Instagram
-            </a>
             <a href="https://open.spotify.com/user/31ege6ijahvlyt3mjpcs7esoukmu" target="_blank" rel="noopener noreferrer" className="border-b border-[var(--border)] hover:text-[var(--ink)] hover:border-[var(--ink)] transition-colors">
               Spotify
             </a>
@@ -177,7 +174,6 @@ export default function Home() {
           <div className="flex flex-wrap gap-4 text-[14.2px] text-[var(--accent)] mt-6">
             <a href="https://www.linkedin.com/in/senjutibala/" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--ink)] transition-colors">LinkedIn</a>
             <a href="https://github.com/tijushe" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--ink)] transition-colors">GitHub</a>
-            <a href="https://www.instagram.com/tijushe/" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--ink)] transition-colors">Instagram</a>
             <a href="https://open.spotify.com/user/31ege6ijahvlyt3mjpcs7esoukmu" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--ink)] transition-colors">Spotify</a>
           </div>
         </footer>
