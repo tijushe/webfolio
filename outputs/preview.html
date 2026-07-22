@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Senjuti Bala</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --ink:#15140F;
+    --muted:#6B6A62;
+    --faint:#9B998F;
+    --border:rgba(21,20,15,0.14);
+    --border-soft:rgba(21,20,15,0.08);
+    --accent:#4169E1;
+    --accent-soft:#E7EBFB;
+  }
+  *{box-sizing:border-box;}
+  ::selection{background:var(--ink);color:var(--bg);}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Google Sans',sans-serif;
+    font-size:16.2px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:700px;margin:0 auto;padding:0 24px;}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--border);transition:border-color .15s, color .15s;}
+  a:hover{color:var(--ink);border-color:var(--ink);}
+
+  nav{padding:22px 0 0;}
+  nav .nav-row{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;font-size:13.7px;letter-spacing:.04em;}
+  nav .nav-row a{border:none;color:var(--accent);}
+  nav .nav-row a:hover{color:var(--ink);}
+  nav .dot{color:var(--faint);}
+
+  header.hero{padding:40px 0 8px;}
+  h1{font-family:'Google Sans',sans-serif;font-weight:500;font-size:42px;margin:0 0 20px;letter-spacing:-.01em;text-align:center;}
+
+  .profile-lead::after{content:"";display:block;clear:both;}
+  .portrait{float:right;width:260px;height:180px;margin:0 0 14px 28px;border:1px solid var(--border);border-radius:2px;overflow:hidden;background:#EAE7DF;}
+  .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block;}
+  .lede{font-family:'Google Sans',sans-serif;font-size:17.2px;line-height:1.75;color:#2b2a24;}
+  .lede p{margin:0 0 14px;}
+
+
+  .contact-row{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:24px;font-size:14.2px;}
+  .contact-row a{border-bottom:1px solid var(--border);}
+
+  section{padding:44px 0;border-top:1px solid var(--border-soft);}
+  section:first-of-type{border-top:none;}
+  h2{font-family:'Google Sans',sans-serif;font-weight:500;font-size:13.2px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:0 0 22px;}
+
+  .xp-item{border-bottom:1px solid var(--border-soft);}
+  .xp-item:last-child{border-bottom:none;}
+  .xp-head{width:100%;background:none;border:none;text-align:left;cursor:pointer;padding:16px 0;display:flex;justify-content:space-between;gap:16px;font-family:inherit;color:inherit;}
+  .xp-head:hover .xp-role{color:var(--ink);}
+  .xp-left .xp-role{font-size:15.7px;font-weight:500;color:var(--accent);transition:color .15s;}
+  .xp-left .xp-meta{font-size:13.7px;color:var(--muted);margin-top:3px;}
+  .xp-toggle{font-size:17.2px;color:var(--faint);flex-shrink:0;}
+  .xp-body{max-height:0;overflow:hidden;transition:max-height .25s ease;}
+  .xp-body-in{padding:0 0 20px;}
+  .xp-body ul{margin:0 0 12px;padding-left:18px;font-size:14.7px;color:#3a392f;}
+  .xp-body li{margin-bottom:6px;}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;}
+  .tag{font-size:12.2px;padding:3px 9px;border:1px solid var(--border);border-radius:20px;color:var(--muted);}
+
+  .proj{padding:20px 0;border-bottom:1px solid var(--border-soft);}
+  .proj:last-of-type{border-bottom:none;}
+  .proj-label{font-size:12.2px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:6px;}
+  .proj-title{font-family:'Google Sans',sans-serif;font-size:18.2px;font-weight:500;margin:0 0 8px;line-height:1.4;}
+  .proj-title a{border-bottom:1px solid var(--border);}
+  .proj-desc{font-size:14.7px;color:#3a392f;margin:0 0 10px;line-height:1.65;}
+
+  .edu-row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--border-soft);}
+  .edu-row:last-child{border-bottom:none;}
+  .edu-row .school{font-weight:500;font-size:15.2px;}
+  .edu-row .deg{font-size:14.2px;color:var(--muted);margin-top:2px;}
+  .edu-row .yr{font-size:13.7px;color:var(--faint);white-space:nowrap;}
+
+  .footnote-list{font-size:14.2px;color:var(--muted);}
+  .footnote-list p{margin:0 0 10px;}
+
+  footer{padding:44px 0 80px;border-top:1px solid var(--border-soft);}
+  .cta{display:inline-block;margin-top:14px;padding:10px 20px;border:1px solid var(--ink);border-radius:2px;font-size:14.2px;letter-spacing:.02em;color:var(--ink);}
+  .cta:hover{background:var(--ink);color:var(--bg);}
+  .foot-links{margin-top:22px;display:flex;flex-wrap:wrap;gap:18px;font-size:14.2px;}
+
+  .bee-note{display:flex;justify-content:center;align-items:center;gap:10px;padding:20px 24px;background:#FFFFFF;}
+  .bee-note img{width:28px;height:28px;display:block;}
+  .bee-note span{font-size:19.7px;color:var(--faint);letter-spacing:.02em;}
+
+  @media(max-width:560px){
+    .portrait{float:none;width:100%;height:200px;margin:0 0 16px;}
+    h1{font-size:34px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-row">
+    <a href="#about">About</a>
+    <span class="dot">·</span>
+    <a href="#experience">Experience</a>
+    <span class="dot">·</span>
+    <a href="#projects">Projects</a>
+    <span class="dot">·</span>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <header class="hero" id="about">
+    <h1>Senjuti Bala</h1>
+
+    <div class="profile-lead">
+      <div class="portrait"><img src="mypic.jpg" alt="Senjuti Bala"></div>
+      <div class="lede">
+        <p>I am a data scientist with roots in research, consulting, and software development. I enjoy working at the intersection of data, systems, and behavioral science. I trained as an engineer and spent two years in technical consulting for telecom, fintech, and consumer goods clients in Bangladesh, primarily on product and financial modelling. I am most at home figuring out how patterns actually work. Agents are my friends, and a simulation is my playground. I also co-authored a book chapter in <em>Fair Data Fair Africa Fair World</em>, where I built a knowledge graph from the testimonies of trafficking survivors. My MSc. thesis introduced a two-layer agent-based model of climate negotiations among three types of countries. I am currently extending it so the agents can learn to make better choices.</p>
+      </div>
+    </div>
+
+    <div class="lede">
+      <p>I am based in Leiden, the Netherlands, and currently looking for opportunities in data and applied AI. I received my master's degree from Leiden University in computer science. I previously studied information technology at the National Institute of Technology, Durgapur.</p>
+      <p><strong>Skills:</strong> agent-based modelling, statistical modelling, RAG, Python (Pandas, NumPy, Scikit-learn, Matplotlib, Statsmodels, Plotly, Mesa), PyTorch, SQL, FAIR data, OWL/RDF ontology design, SPARQL, Power BI, and Streamlit. Fluent in English and Bengali, and a beginner in Dutch.</p>
+    </div>
+
+    <div class="contact-row">
+      <a href="mailto:balasenjuti22@gmail.com">balasenjuti22@gmail.com</a>
+      <a href="https://www.linkedin.com/in/senjutibala/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/tijushe" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://calendly.com/balasenjuti22/30min" target="_blank" rel="noopener">Book a chat</a>
+      <a href="https://www.instagram.com/tijushe/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://open.spotify.com/user/31ege6ijahvlyt3mjpcs7esoukmu" target="_blank" rel="noopener">Spotify</a>
+    </div>
+  </header>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div id="xp-list"></div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div id="proj-list"></div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="edu-row">
+      <div>
+        <div class="school">Leiden University</div>
+        <div class="deg">MSc Computer Science, Data Science Specialisation</div>
+      </div>
+      <div class="yr">2023 to 2025</div>
+    </div>
+    <div class="edu-row">
+      <div>
+        <div class="school">National Institute of Technology, Durgapur</div>
+        <div class="deg">BTech, Information Technology</div>
+      </div>
+      <div class="yr">2016 to 2020</div>
+    </div>
+  </section>
+
+  <section id="notes">
+    <h2>Notes</h2>
+    <div class="footnote-list">
+      <p>Outstanding Agility Award, twice, RedDot Digital. Awarded for consistent delivery across KPIs, client impact, and stakeholder communication.</p>
+      <p>ICCR Full Scholarship: a government-funded, four-year BTech. JENESYS Exchange Fellowship: a fully funded exchange to Japan.</p>
+      <p>Volunteers with Green Kitchen Leiden on food waste reduction.</p>
+      <p>Hobbies include long-distance trekking, cycling, and films.</p>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <h2>Contact</h2>
+    <div class="lede" style="font-size:15.2px;">
+      <p>Best reached at <a href="mailto:balasenjuti22@gmail.com">balasenjuti22@gmail.com</a>.</p>
+    </div>
+    <a class="cta" href="https://calendly.com/balasenjuti22/30min" target="_blank" rel="noopener">Book a 30 min chat</a>
+    <div class="foot-links">
+      <a href="https://www.linkedin.com/in/senjutibala/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/tijushe" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.instagram.com/tijushe/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://open.spotify.com/user/31ege6ijahvlyt3mjpcs7esoukmu" target="_blank" rel="noopener">Spotify</a>
+    </div>
+  </footer>
+
+</div>
+
+<div class="bee-note">
+  <img src="bee.gif" alt="">
+  <span>save the bees</span>
+</div>
+
+<script>
+const experiences = [
+  {
+    company: "RedDot Digital Ltd.",
+    role: "Technical Consultant",
+    meta: "Dhaka, Bangladesh · Jul 2021 to Aug 2023",
+    details: [
+      "Owned financial and pricing analysis across 6+ B2B client engagements, including British American Tobacco, Huawei, SMART Axiata, and Netcore.",
+      "Built and maintained KPI dashboards in Power BI and revenue tracking, presented directly to C-level decision-makers.",
+      "Led the full RFP and tender cycle for 5+ clients across fintech, telecoms, and NGO sectors, with a 100% bid conversion rate on managed accounts.",
+      "Reduced manual reporting time through structured data pipelines and Excel automation.",
+    ],
+    tags: ["Power BI", "Financial Modelling", "Stakeholder Management", "Figma"],
+  },
+  {
+    company: "Distill.io",
+    role: "Software Engineer",
+    meta: "Bangalore, India · Sep 2020 to Jun 2021",
+    details: [
+      "Built a point-and-click selector builder and a live preview panel for Scrapex.ai, a no-code web scraping platform.",
+      "Built data pipeline interfaces to export scraped data to CSV and JSON.",
+    ],
+    tags: ["Svelte", "TailwindCSS", "Data Pipelines"],
+  },
+  {
+    company: "SigmaRed Technologies Inc.",
+    role: "Developer Intern",
+    meta: "Toronto, Canada, Remote · Mar 2020 to Aug 2020",
+    details: [
+      "Built an ML insights dashboard with interactive charts and model performance tracking.",
+      "The MVP directly supported the company's first external funding round.",
+    ],
+    tags: ["React", "JavaScript", "ML Dashboards"],
+  },
+  {
+    company: "Robi Axiata Ltd.",
+    role: "Process Automation Intern (RPA Developer)",
+    meta: "Dhaka, Bangladesh · Mar 2019 to Jul 2019",
+    details: [
+      "Automated HR and finance workflows using Python and Selenium, including automated data entry and scheduled report generation.",
+      "Reduced manual processing time across both departments.",
+    ],
+    tags: ["Python", "Selenium", "RPA"],
+  },
+];
+
+const projects = [
+  {
+    label: "MSc thesis, Leiden University (LIACS), 2025",
+    title: "Two-Layer Agent-Based Model for Climate Cooperation",
+    href: "https://theses.liacs.nl/3627",
+    desc: 'A two-layer agent-based model that couples national climate-policy agents (developed, developing, and vulnerable country types) with consumer-level green technology adoption. The model tests fairness mechanisms, international aid flows, and bounded rationality across 7 scenarios over a 100-year horizon, run across 100 seeds. The key finding is that access matters more than awareness. <a href="https://github.com/tijushe/two_layer_climate_abm" target="_blank" rel="noopener">Code is available on GitHub.</a>',
+    tags: ["Python", "Mesa ABM", "Agent-Based Modelling", "Pandas"],
+  },
+  {
+    label: "Co-authored chapter, Fair Data Fair Africa Fair World, 2025",
+    title: "FAIR Data Implementation for Analysis of Research Data in Human Trafficking and Migration",
+    href: "https://www.researchgate.net/publication/391762371",
+    desc: 'I co-led the FAIRification of 126 ethnographic interviews with trafficking survivors across Libya, Sudan, Ethiopia, and Europe. I built a custom OWL ontology, converted records to RDF and Turtle using rdflib, and loaded them into AllegroGraph for SPARQL querying. I also built a Streamlit dashboard and Gephi network graphs for non-technical researchers, under full DPIA and GDPR compliance. <a href="https://doi.org/10.5281/zenodo.15383037" target="_blank" rel="noopener">DOI: 10.5281/zenodo.15383037</a>',
+    tags: ["FAIR Principles", "RDF/OWL", "SPARQL", "Streamlit", "Network Analysis"],
+  },
+  {
+    label: "Independent project",
+    title: "Job Database: NL Job Search Tool with Entity Resolution",
+    href: "https://github.com/tijushe/job-database-nl",
+    desc: "Originally built for personal use, after getting tired of manually checking which companies actually sponsor work visas for non-EU applicants. The Dutch sponsor register lists companies by legal name, like Booking.com International B.V., while job listings use brand names, like Booking.com, so simple text matching fails. This tool fixes that with embeddings and vector search in BigQuery, matching company names by meaning instead of exact text. It also ranks companies by how well they match a pasted CV, using the same embedding approach. Backend built in Flask.",
+    tags: ["Python", "Flask", "BigQuery", "Vector Search", "Entity Resolution"],
+  },
+  {
+    label: "Independent project",
+    title: "Crop Yield Prediction for SDG2",
+    href: "https://github.com/tijushe/crop-yield-prediction-SDG2",
+    desc: "A machine learning model that predicts crop yields from agricultural and climate data, built in support of UN Sustainable Development Goal 2, Zero Hunger.",
+    tags: ["Python", "Scikit-learn", "Regression"],
+  },
+  {
+    label: "Independent project",
+    title: "Bias Detection in News Sentences",
+    href: "https://github.com/tijushe/bias-detection-news-sentences",
+    desc: "A text classification model that detects bias at the sentence level in news articles.",
+    tags: ["Python", "NLP", "Text Classification"],
+  },
+  {
+    label: "Independent project",
+    title: "Neural Reranking for MS MARCO",
+    href: "https://github.com/tijushe/neural-reranking-msmarco",
+    desc: "A neural reranking model for passage retrieval on the MS MARCO dataset.",
+    tags: ["Python", "PyTorch", "Information Retrieval", "Transformers"],
+  },
+  {
+    label: "Independent project",
+    title: "AI Grandma: A RAG-Based Folklore Storyteller",
+    href: "https://github.com/tijushe/ai-grandma-storyteller",
+    desc: "Built to explore different cultures through their myths and folk stories. A retrieval-augmented storyteller grounded in real folk tales instead of generic prompts. Chunks and embeds the tales into a FAISS vector store, retrieves the closest match to a chosen theme, generates a retelling with a local LLM, and narrates it aloud through a Streamlit app. Runs fully offline on open-weight models.",
+    tags: ["Python", "RAG", "FAISS", "Streamlit", "Local LLM"],
+  },
+];
+
+function renderExperience(){
+  const root = document.getElementById('xp-list');
+  experiences.forEach((exp, i) => {
+    const item = document.createElement('div');
+    item.className = 'xp-item';
+    item.innerHTML = `
+      <button class="xp-head" data-i="${i}">
+        <div class="xp-left">
+          <div class="xp-role">${exp.company}, ${exp.role}</div>
+          <div class="xp-meta">${exp.meta}</div>
+        </div>
+        <span class="xp-toggle">+</span>
+      </button>
+      <div class="xp-body">
+        <div class="xp-body-in">
+          <ul>${exp.details.map(d => `<li>${d}</li>`).join('')}</ul>
+          <div class="tags">${exp.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+        </div>
+      </div>`;
+    root.appendChild(item);
+  });
+  root.querySelectorAll('.xp-head').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const body = btn.parentElement.querySelector('.xp-body');
+      const toggle = btn.querySelector('.xp-toggle');
+      const isOpen = body.style.maxHeight && body.style.maxHeight !== '0px';
+      document.querySelectorAll('.xp-body').forEach(b => b.style.maxHeight = '0px');
+      document.querySelectorAll('.xp-toggle').forEach(t => t.textContent = '+');
+      if(!isOpen){ body.style.maxHeight = body.scrollHeight + 'px'; toggle.textContent = '−'; }
+    });
+  });
+}
+
+function renderProjects(){
+  const root = document.getElementById('proj-list');
+  projects.forEach(p => {
+    const item = document.createElement('div');
+    item.className = 'proj';
+    item.innerHTML = `
+      <div class="proj-label">${p.label}</div>
+      <h3 class="proj-title"><a href="${p.href}" target="_blank" rel="noopener">${p.title}</a></h3>
+      <p class="proj-desc">${p.desc}</p>
+      <div class="tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>`;
+    root.appendChild(item);
+  });
+}
+
+renderExperience();
+renderProjects();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "id": "4",
+  "subject": "Verify & share files",
+  "description": "Sanity-check the tsx files for syntax/consistency, present files to user.",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

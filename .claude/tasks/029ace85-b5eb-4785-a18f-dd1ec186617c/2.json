@@ -1,0 +1,8 @@
+{
+  "id": "2",
+  "subject": "Build live HTML preview",
+  "description": "Build a single-file HTML/CSS/JS preview (via visualize widget) with a canvas-based agent-based/pattern simulation as signature visual, so Senjuti can see the design before I write the Next.js source.",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}

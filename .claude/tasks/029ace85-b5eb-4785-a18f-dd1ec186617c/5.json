@@ -1,0 +1,12 @@
+{
+  "id": "5",
+  "subject": "Deploy portfolio to Vercel",
+  "description": "Deploy the complete Next.js project at /sessions/tender-brave-bell/mnt/outputs/deploy-project to Vercel under team_NFecgrPKTeIDY2vihW7kXCVa, then attach domain senjutibala.com.",
+  "activeForm": "Deploying portfolio to Vercel",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": [],
+  "metadata": {
+    "note": "Paused per user request — deploying manually via Vercel themselves. All project files ready in outputs/deploy-project/."
+  }
+}

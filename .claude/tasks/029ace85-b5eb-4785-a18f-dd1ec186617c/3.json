@@ -1,0 +1,8 @@
+{
+  "id": "3",
+  "subject": "Write Next.js source files",
+  "description": "Port the approved design into page.tsx, layout.tsx, globals.css, and components (Navbar, Simulation canvas, Experience, Projects, FloatingActions) matching her existing Next.js/Tailwind stack, save to outputs.",
+  "status": "completed",
+  "blocks": [],
+  "blockedBy": []
+}
