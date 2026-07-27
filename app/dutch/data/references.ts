@@ -21,14 +21,14 @@ export type Reference = {
 export const references: Reference[] = [
   {
     title: "Grammar rules - Dutch",
-    url: "https://docs.google.com/document/d/REPLACE_WITH_YOUR_DOC_ID/edit",
+    url: "https://drive.google.com/file/d/1Pli2Bu9ytA4VTqtU4YDxH9lT8jUhbgls/view?usp=sharing",
     description:
       "Notes on zouden (polite requests), om...te + infinitive, common infinitives, and other grammar points from class.",
     category: "Grammar",
   },
   {
     title: "Preply lesson notes",
-    url: "https://docs.google.com/document/d/REPLACE_WITH_YOUR_DOC_ID/edit",
+    url: "https://drive.google.com/file/d/1bnIkwwZZj6DDpC3CeiR5QPhcPW_uY-jx/view?usp=sharing",
     description:
       "Pronunciation guide for tricky Dutch vowel sounds (u, uu, eu, ui, oe) plus dialogue translations from Les 1.",
     category: "Lessons",

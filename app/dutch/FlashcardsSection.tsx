@@ -51,20 +51,24 @@ export default function FlashcardsSection() {
     <div>
       {/* Deck picker */}
       <div className="flex flex-wrap gap-2 mb-6">
-        {decks.map((d) => (
-          <button
-            key={d.id}
-            onClick={() => selectDeck(d.id)}
-            className={`px-3.5 py-1.5 rounded-full text-[12.7px] border transition-colors ${
-              d.id === deckId
-                ? "bg-[var(--ink)] text-[var(--bg)] border-[var(--ink)]"
-                : "border-[var(--border)] text-[var(--muted)] hover:text-[var(--ink)] hover:border-[var(--ink)]"
-            }`}
-          >
-            {d.title}
-            <span className="opacity-60"> · {d.cards.length}</span>
-          </button>
-        ))}
+        {decks.map((d) => {
+          const active = d.id === deckId
+          return (
+            <button
+              key={d.id}
+              onClick={() => selectDeck(d.id)}
+              className="px-3.5 py-1.5 rounded-full text-[12.7px] border transition-colors"
+              style={
+                active
+                  ? { backgroundColor: d.color.border, borderColor: d.color.border, color: "#fff" }
+                  : { borderColor: d.color.border, color: d.color.text, backgroundColor: d.color.bg }
+              }
+            >
+              {d.title}
+              <span className="opacity-70"> · {d.cards.length}</span>
+            </button>
+          )
+        })}
       </div>
 
       <p className="text-[13.2px] text-[var(--muted)] mb-6" style={{ fontFamily: "var(--font-voice)" }}>
@@ -74,14 +78,20 @@ export default function FlashcardsSection() {
       {/* Card */}
       <button
         onClick={() => setFlipped((f) => !f)}
-        className="w-full h-[220px] border border-[var(--border)] rounded-sm bg-[#EAE7DF] flex flex-col items-center justify-center px-6 text-center hover:border-[var(--ink)] transition-colors"
+        className="w-full min-h-[280px] border-2 rounded-sm flex flex-col items-center justify-center px-8 py-10 text-center transition-colors"
+        style={{ backgroundColor: deck.color.bg, borderColor: deck.color.border }}
       >
-        <span className="text-[10.2px] uppercase tracking-[0.12em] text-[var(--faint)] mb-3">
+        <span
+          className="text-[11.2px] uppercase tracking-[0.12em] mb-5 opacity-70"
+          style={{ color: deck.color.text }}
+        >
           {flipped ? "English" : "Dutch"} · tap to flip
         </span>
         <span
-          className="text-[26px] font-medium tracking-tight"
-          style={{ fontFamily: "var(--font-voice)" }}
+          className={`leading-tight font-medium tracking-tight ${
+            flipped ? "text-[26px]" : "text-[42px]"
+          }`}
+          style={{ fontFamily: "var(--font-voice)", color: deck.color.text }}
         >
           {flipped ? card.back : card.front}
         </span>

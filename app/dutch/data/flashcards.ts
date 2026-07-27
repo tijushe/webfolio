@@ -6,7 +6,14 @@
 // To add a whole new deck, copy a deck object and give it a new `id`.
 
 export type Flashcard = { front: string; back: string }
-export type Deck = { id: string; title: string; description: string; cards: Flashcard[] }
+export type DeckColor = { bg: string; border: string; text: string }
+export type Deck = {
+  id: string
+  title: string
+  description: string
+  color: DeckColor
+  cards: Flashcard[]
+}
 
 function cards(pairs: [string, string][]): Flashcard[] {
   return pairs.map(([front, back]) => ({ front, back }))
@@ -25,6 +32,7 @@ export const decks: Deck[] = [
     id: "easy-1",
     title: "Easy 1",
     description: "Core everyday words: articles, pronouns, basics.",
+    color: { bg: "#EAF2FF", border: "#4169E1", text: "#1F3E9E" },
     cards: cards([
       ["de", "the"], ["en", "and"], ["een", "a"], ["het", "it"], ["in", "in"], ["te", "too"],
       ["ik", "I"], ["hebben", "to have"], ["hij", "he"], ["niet", "not"], ["op", "on"],
@@ -50,6 +58,7 @@ export const decks: Deck[] = [
     id: "easy-2",
     title: "Easy 2",
     description: "More everyday vocabulary and common nouns.",
+    color: { bg: "#EAFBF3", border: "#1FA97A", text: "#0F6B4C" },
     cards: cards([
       ["elk", "each"], ["ver", "far"], ["later", "later"], ["vertellen", "to tell"],
       ["jij", "you"], ["drie", "three"], ["oud", "old"], ["soms", "sometimes"],
@@ -125,6 +134,7 @@ export const decks: Deck[] = [
     id: "easy-3",
     title: "Easy 3",
     description: "Broader vocabulary: abstract nouns and everyday topics.",
+    color: { bg: "#FFF3E6", border: "#E08A3C", text: "#8A4F16" },
     cards: cards([
       ["dromen", "to dream"], ["winter", "winter"], ["maan", "moon"],
       ["kilometer", "kilometers"], ["wens", "wish"], ["miljoen", "million"],
@@ -183,6 +193,7 @@ export const decks: Deck[] = [
     id: "medium-1",
     title: "Medium 1",
     description: "Mid-level vocabulary and connector words.",
+    color: { bg: "#F3EEFF", border: "#8B5FBF", text: "#5B3A85" },
     cards: cards([
       ["boom, de", "tree"], ["stoel, de", "chair"], ["van", "from / of"], ["zijn", "to be"],
       ["met", "with"], ["als", "if / when"], ["er", "there"], ["maar", "but"],
@@ -203,6 +214,7 @@ export const decks: Deck[] = [
     id: "medium-2",
     title: "Medium 2",
     description: "Mid-level vocabulary: body, home, and abstract words.",
+    color: { bg: "#FFEDF1", border: "#D6446B", text: "#8F2743" },
     cards: cards([
       ["vroeg", "early"], ["stem", "voice"], ["kant", "side"], ["geld", "money"],
       ["stuk", "piece"], ["graag", "gladly"], ["nou", "well"], ["pas", "only"],
@@ -222,6 +234,7 @@ export const decks: Deck[] = [
     id: "medium-3",
     title: "Medium 3",
     description: "Mid-level vocabulary: places, feelings, and objects.",
+    color: { bg: "#FFFBE0", border: "#C9A227", text: "#7A6112" },
     cards: cards([
       ["taal", "language"], ["volk", "people"], ["aarde", "soil"], ["stoel", "chair"],
       ["muur", "wall"], ["raad", "advice"], ["boom", "tree"], ["dorp", "village"],
@@ -246,6 +259,7 @@ export const decks: Deck[] = [
     id: "medium-4",
     title: "Medium 4",
     description: "Mid-level vocabulary: home, clothing, and daily life.",
+    color: { bg: "#E7F7F7", border: "#2A9D9D", text: "#166363" },
     cards: cards([
       ["buurt", "turn"], ["wangen", "cheeks"], ["vloer", "floor"], ["rook", "smoke"],
       ["slag", "battle"], ["maan", "moon"], ["wens", "wish"], ["sfeer", "ambiance"],
@@ -278,6 +292,7 @@ export const decks: Deck[] = [
     id: "common-verbs",
     title: "Common verbs",
     description: "The verbs you'll reach for constantly.",
+    color: { bg: "#FFEFEA", border: "#E2603A", text: "#943617" },
     cards: cards([
       ["krijgen", "to get / receive"], ["lopen", "to walk"], ["hebben", "to have"],
       ["gaan", "to go"], ["zijn", "to be"], ["doen", "to do"], ["moeten", "should / must"],
@@ -313,6 +328,7 @@ export const decks: Deck[] = [
     id: "separable-verbs",
     title: "Separable verbs",
     description: "Verbs that split their prefix in the main clause.",
+    color: { bg: "#EEF1FF", border: "#5B6FE0", text: "#31408F" },
     cards: cards([
       ["meenemen", "to take along / with"], ["samenwerken", "to cooperate"],
       ["weggaan", "to leave"], ["uitleggen", "to explain"], ["doorgaan", "to continue"],
@@ -340,6 +356,7 @@ export const decks: Deck[] = [
     id: "prepositions",
     title: "Prepositions",
     description: "Where things are.",
+    color: { bg: "#F7F1E6", border: "#A97D3E", text: "#6B4D22" },
     cards: cards([
       ["voor", "in front of / before"], ["achter", "behind"], ["boven", "above"],
       ["onder", "below"], ["naast", "next to"], ["bij", "at"], ["in", "in"], ["op", "on"],
@@ -351,6 +368,7 @@ export const decks: Deck[] = [
     id: "adjectives-opposites",
     title: "Adjectives (opposites)",
     description: "Learn each adjective with its opposite.",
+    color: { bg: "#F0F5EA", border: "#6E8F4A", text: "#425C2A" },
     cards: opposites([
       ["goed", "good", "slecht", "bad"],
       ["groot", "big", "klein", "small"],
