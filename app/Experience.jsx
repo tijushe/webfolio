@@ -8,9 +8,14 @@ const experiences = [
     role: "Technical Consultant",
     meta: "Dhaka, Bangladesh · Jul 2021 to Aug 2023",
     details: [
+
       "Owned financial and pricing analysis across 6+ B2B client engagements, including British American Tobacco, Huawei, SMART Axiata, and Netcore.",
       "Built and maintained KPI dashboards in Power BI and revenue tracking, presented directly to C-level decision-makers.",
       "Led the full RFP and tender cycle for 5+ clients across fintech, telecoms, and NGO sectors, with a 100% bid conversion rate on managed accounts.",
+      "Analysed requirements for in-house platforms including Trust Axiata Pay, the HRMS suite, and Binge, the group's streaming service. Sat between business stakeholders and engineering to turn product needs into technical scope.",
+      "Scoped an OCR and RPA solution to digitise handwritten bank forms, covering account opening through cheque submission, with a local vendor whose engine reads handwritten Bangla."
+      "Worked with the audit and finance departments on requirement definition and internal compliance checks for product rollouts.",
+      "Researched IoT remote-security solutions for banks and other high-security sites.",
       "Reduced manual reporting time through structured data pipelines and Excel automation.",
     ],
     tags: ["Power BI", "Financial Modelling", "Stakeholder Management", "Figma"],
